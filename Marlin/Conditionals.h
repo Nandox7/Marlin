@@ -362,7 +362,7 @@
   #define HAS_AUTO_FAN_1 (defined(EXTRUDER_1_AUTO_FAN_PIN) && EXTRUDER_1_AUTO_FAN_PIN >= 0)
   #define HAS_AUTO_FAN_2 (defined(EXTRUDER_2_AUTO_FAN_PIN) && EXTRUDER_2_AUTO_FAN_PIN >= 0)
   #define HAS_AUTO_FAN_3 (defined(EXTRUDER_3_AUTO_FAN_PIN) && EXTRUDER_3_AUTO_FAN_PIN >= 0)
-  #define HAS_AUTO_FAN HAS_AUTO_FAN_0 || HAS_AUTO_FAN_1 || HAS_AUTO_FAN_2 || HAS_AUTO_FAN_3
+  #define HAS_AUTO_FAN (HAS_AUTO_FAN_0 || HAS_AUTO_FAN_1 || HAS_AUTO_FAN_2 || HAS_AUTO_FAN_3)
   #define HAS_FAN (defined(FAN_PIN) && FAN_PIN >= 0)
 
   /**
@@ -389,17 +389,6 @@
   #if HAS_FAN
     #define WRITE_FAN(v) WRITE(FAN_PIN, v)
   #endif
-
-  /**
-   * Sampling period of the temperature routine
-   * This override comes originally from temperature.cpp
-   * The Configuration.h option is basically ignored.
-   */
-  #ifdef PID_dT
-    #undef PID_dT
-  #endif
-  #define PID_dT ((OVERSAMPLENR * 12.0)/(F_CPU / 64.0 / 256.0))
-
 
 #endif //CONFIGURATION_LCD
 #endif //CONDITIONALS_H
