@@ -41,7 +41,7 @@ Here are some standard links for getting your machine calibrated:
 #define STRING_VERSION "1.0.2"
 #define STRING_URL "reprap.org"
 #define STRING_VERSION_CONFIG_H __DATE__ " " __TIME__ // build date and time
-#define STRING_CONFIG_H_AUTHOR "(bq Hephestos FW v1.4n1)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(bq Hephestos FW v1.4n4)" // Who made the changes.
 #define STRING_SPLASH_LINE1 "v" STRING_VERSION // will be shown during bootup in line 1
 //#define STRING_SPLASH_LINE2 STRING_VERSION_CONFIG_H // will be shown during bootup in line2
 
@@ -362,8 +362,8 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
-#define X_MAX_POS 215
-#define Y_MAX_POS 210
+#define X_MAX_POS 200
+#define Y_MAX_POS 200
 #define Z_MAX_POS 180
 
 //===========================================================================
@@ -380,8 +380,8 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 //============================ Manual Bed Leveling ==========================
 //===========================================================================
 
-// #define MANUAL_BED_LEVELING  // Add display menu option for bed leveling
-// #define MESH_BED_LEVELING    // Enable mesh bed leveling
+ #define MANUAL_BED_LEVELING  // Add display menu option for bed leveling
+ #define MESH_BED_LEVELING    // Enable mesh bed leveling
 
 #if defined(MESH_BED_LEVELING)
   #define MESH_MIN_X 10
@@ -516,7 +516,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 #define DEFAULT_MAX_FEEDRATE          {250, 250, 3.3, 25}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {3000,3000,100,10000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
 
-#define DEFAULT_ACCELERATION          1000    // X, Y, Z and E max acceleration in mm/s^2 for printing moves
+#define DEFAULT_ACCELERATION          1000   // X, Y, Z and E max acceleration in mm/s^2 for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  1000   // X, Y, Z and E max acceleration in mm/s^2 for retracts
 #define DEFAULT_TRAVEL_ACCELERATION   1000
 
@@ -662,7 +662,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 // Temperature status LEDs that display the hotend and bet temperature.
 // If all hotends and bed temperature and temperature setpoint are < 54C then the BLUE led is on.
 // Otherwise the RED led is on. There is 1C hysteresis.
-//#define TEMP_STAT_LEDS
+//#define lo
 
 // M240  Triggers a camera by emulating a Canon RC-1 Remote
 // Data from: http://www.doc-diy.net/photo/rc-1_hacked/
