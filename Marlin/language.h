@@ -35,7 +35,6 @@
   // pick your language from the list above
   #define LANGUAGE_INCLUDE GENERATE_LANGUAGE_INCLUDE(en)
 #endif
-#endif
 
 #define PROTOCOL_VERSION "1.0"
 #define FIRMWARE_URL "https://github.com/MarlinFirmware/Marlin"
