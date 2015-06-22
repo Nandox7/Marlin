@@ -611,6 +611,7 @@ void lcd_cooldown() {
  * "Prepare" submenu
  *
  */
+static void lcd_filament_tasks_menu();
 
 static void lcd_prepare_menu() {
   START_MENU();
@@ -619,6 +620,11 @@ static void lcd_prepare_menu() {
   // ^ Main
   //
   MENU_ITEM(back, MSG_MAIN, lcd_main_menu);
+
+  // 
+  // Filament Tasks
+  //
+  MENU_ITEM(submenu, MSG_FILAMENT_TASKS, lcd_filament_tasks_menu);
 
   //
   // Auto Home
@@ -712,6 +718,34 @@ inline void line_to_current(AxisEnum axis) {
   #else
     plan_buffer_line(current_position[X_AXIS], current_position[Y_AXIS], current_position[Z_AXIS], current_position[E_AXIS], manual_feedrate[axis]/60, active_extruder);
   #endif
+}
+
+/**
+ *
+ * "Prepare" > "Filament Load/Unload" submenu
+ *
+ */
+
+static void lcd_filament_load() {
+  
+}
+static void lcd_filament_unload() {
+  
+}
+
+static void lcd_filament_insert_menu() {
+    START_MENU();
+    MENU_ITEM(back, MSG_FILAMENT_LOAD, lcd_filament_tasks_menu);
+    MENU_ITEM(gcode, MSG_PRE_EXTRUD, PSTR("M701"));
+    END_MENU();
+}
+
+static void lcd_filament_tasks_menu() {
+  START_MENU();
+  MENU_ITEM(back, MSG_PREPARE, lcd_prepare_menu);
+  MENU_ITEM(submenu, MSG_FILAMENT_LOAD, lcd_filament_load);
+  MENU_ITEM(submenu, MSG_FILAMENT_UNLOAD, lcd_filament_unload);
+  END_MENU();
 }
 
 /**

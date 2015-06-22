@@ -439,4 +439,10 @@
   #endif
 #endif // DELTA_CALIBRATION_MENU
 
+#define MSG_FILAMENT_TASKS "Load/Unload Filament"
+#define MSG_FILAMENT_LOAD "Load Filament"
+#define MSG_FILAMENT_LOAD "Load Filament"
+#define MSG_FILAMENT_UNLOAD "Unload Filament"
+#define MSG_PRE_EXTRUD "Insert and click to continue"
+
 #endif // LANGUAGE_EN_H
