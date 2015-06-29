@@ -1336,6 +1336,13 @@ menu_edit_type(unsigned long, long5, ftostr5, 0.01)
  * Audio feedback for controller clicks
  *
  */
+
+#ifdef LCD_USE_I2C_BUZZER
+  void lcd_buzz(long duration, uint16_t freq) { // called from buzz() in Marlin_main.cpp where lcd is unknown
+    lcd.buzz(duration, freq);
+  }
+#endif
+
 void lcd_quick_feedback() {
   lcdDrawUpdate = 2;
   next_button_update_ms = millis() + 500;
@@ -1347,7 +1354,11 @@ void lcd_quick_feedback() {
     #ifndef LCD_FEEDBACK_FREQUENCY_DURATION_MS
       #define LCD_FEEDBACK_FREQUENCY_DURATION_MS (1000/6)
     #endif    
+<<<<<<< HEAD
     buzz(LCD_FEEDBACK_FREQUENCY_DURATION_MS, LCD_FEEDBACK_FREQUENCY_HZ);
+=======
+    lcd.buzz(LCD_FEEDBACK_FREQUENCY_DURATION_MS, LCD_FEEDBACK_FREQUENCY_HZ);
+>>>>>>> 05fcf573ccab4e6cc7045f0bc1ba57bbed99a5a2
   #elif defined(BEEPER) && BEEPER >= 0
     #ifndef LCD_FEEDBACK_FREQUENCY_HZ
       #define LCD_FEEDBACK_FREQUENCY_HZ 5000
@@ -1782,6 +1793,7 @@ void lcd_reset_alert_level() { lcd_status_message_level = 0; }
   bool lcd_clicked() { return LCD_CLICKED; }
 
 #endif // ULTIPANEL
+<<<<<<< HEAD
 
 #if HAS_BUZZER
   void buzz(long duration, uint16_t freq) {
@@ -1801,6 +1813,8 @@ void lcd_reset_alert_level() { lcd_status_message_level = 0; }
     }
   }
 #endif
+=======
+>>>>>>> 05fcf573ccab4e6cc7045f0bc1ba57bbed99a5a2
 
 /*********************************/
 /** Number to string conversion **/
