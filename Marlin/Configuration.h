@@ -469,9 +469,9 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
   #ifdef AUTO_BED_LEVELING_GRID
 
     #define LEFT_PROBE_BED_POSITION 15
-    #define RIGHT_PROBE_BED_POSITION 150
+    #define RIGHT_PROBE_BED_POSITION 190
     #define FRONT_PROBE_BED_POSITION 15
-    #define BACK_PROBE_BED_POSITION 150
+    #define BACK_PROBE_BED_POSITION 170
 
     #define MIN_PROBE_EDGE 10 // The probe square sides can be no smaller than this
 
@@ -496,7 +496,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
   // X and Y offsets must be integers
   #define X_PROBE_OFFSET_FROM_EXTRUDER -25     // Probe on: -left  +right
   #define Y_PROBE_OFFSET_FROM_EXTRUDER -27     // Probe on: -front +behind
-  #define Z_PROBE_OFFSET_FROM_EXTRUDER -4.50  // -below (always!)
+  #define Z_PROBE_OFFSET_FROM_EXTRUDER  4.20  // -below (always!)
 
   #define Z_RAISE_BEFORE_HOMING 4       // (in mm) Raise Z before homing (G28) for Probe Clearance.
                                         // Be sure you have this distance over your Z_MAX_POS in case
